@@ -1,0 +1,5 @@
+Logistic Regression Advanced Optimisation:
+>Conjugate gradient, BFGS, L-BFGS are diff optimisation algorithms
+>Quicker than gradient descent
+>Dont need to manually pick a
+>More complex

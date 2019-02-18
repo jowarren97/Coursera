@@ -1,0 +1,33 @@
+uses of machine learning:
+>database mining e.g web click data, human genome
+>applications can't program by hand e.g computer vision, language processing
+>self-customizing programs e.g product rec
+>understanding human learning
+
+what is machine learning?
+>ability to learn w/o being explicitly programmed
+>ability can exceed programmer
+>a computer program is said to learn from experience E wrt task T & perf measure P, if its performance on T as measured by P improves with experience E
+
+machine learning algorithms:
+>supervised
+>unsupervised
+>reinforcement
+>recommender systems
+
+supervised learning:
+>give dataset and correct answers
+>regression problem = map input to cont value output
+>classification problem = map input to discrete value output i.e group
+>ideally want alg that can take in inf # input features (SVM)
+
+unsupervised learning
+>dont know correct groupings/results
+>clustering to derive structure of data
+>e.g market segmentation, social network analysis
+>e.g cocktail party, separating speech from noisy background
+
+
+
+
+

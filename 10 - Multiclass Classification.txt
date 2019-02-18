@@ -1,0 +1,5 @@
+1-vs-All Method:
+>Assign classes to 2 new classes
+>e.g 3 classes, repeat for all 3 groupings (C1+2, C3; C1+3, C2; C2+3, C1)
+>Have 3 hypothesis functions for each 3 groupings
+>Pick class that maximises h(x)

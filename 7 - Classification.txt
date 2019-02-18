@@ -1,0 +1,19 @@
+Binary Classification:
+>Output is 0 or 1
+>Dont use linear regression
+>Use logistic regression (h(x) limited betw 0 and 1)
+
+Logistic Regression:
+>h(x) = g(theta'.x)
+>g(z) = 1/(1+e^-z) ; sigmoid/logistic function
+>h(x)<0.5 classify y as 0
+>h(x)>0.5 classify y as 1
+>interpret h(x) as estimated prob that y=1 on input x (!!!)
+>h(x) = P(y=1|x;theta)
+
+Decision Boundary:
+>g(z)>0.5 for z>0
+>z = theta'.x
+>i.e if theta0 + theta1.x1 + theta2.x2 > 0 predict y = 1
+>x1 + x2 > c is decision boundary
+>Can have nonlinear decision boundaries i.e h(x) = g(theta0 + theta1.x1 + theta2.x1^2 ...)

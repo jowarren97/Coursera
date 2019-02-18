@@ -1,0 +1,32 @@
+Model:
+>Simple model - computational unit. Input/Output
+>Model as logistic unit
+>x vector [x0, x1, x2, ...] as input wires
+>h(x) = sigmoid(theta'.X)
+>Sigmoid activation function !!!
+>Network is formed of many of these units arranged in layers
+>First layer  (x) is input layer, final is output layer, inbetween is hidden layer
+
+Neural Network Model Representation:
+>a(j)_i is activation of unit i in layer j
+>theta(j) is matrix of weights controlling function mapping from layers j to j+1
+>e.g a(2)_1 = g(theta(1)_10 * x0 + theta(1)_11 * x1 ... )
+>If a network has s_j units in layer j, s_j+1 in layer j+1, then theta(j) will be of dimension s_j+1 X (s_j   + 1)
+
+Vectorised Implementation:
+>a(2)_1 = g(theta(1)_10 * x0 + theta(1)_11 * x1 + theta(1)_12 * x2 + theta(1)_13 * x3)
+>a(2)_1 = g(z(2)_1)
+>a(2)_2 = g(z(2)_2)
+>a(2)_3 = g(z(2)_3)
+
+>x = [x0; x1; x2; x3]
+>z(2) = [z(2)_1;  z(2)_2;  z(3)_2]
+
+>z(2) = theta(1) * x
+>a(2) = g(z(2))       ...     a(2) & z(2) 3x1
+
+>for bias unit add an a(2)_0 term, 1 !!!
+
+>CALCULATING H(X) KNOWN AS FWD PROPAGATION !!!
+
+>h(x) = g( theta(2)_10 * a(2)_0  +  theta(2)_11 * a(2)_1  +  theta(2)_12 * a(2)_2  +  theta(2)_13 * a(2)_3) )

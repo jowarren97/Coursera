@@ -1,0 +1,36 @@
+Kernel:
+>Given x, commpute new features depending on proximity to landmarks l(1), l(2), l(3) ... in feature space
+>f1 = similarity(x, l(1)) = exp(- ||x-l(1)||^2/2sigma^2 )
+>Where f1 is in h(x) = theta0 + theta1.f1(x) + theta2.f2(x) + ...
+>Same for f2 but with l(2)
+
+>Similarity function known as GAUSSIAN KERNEL
+
+>If x ~ l(1), f1 ~ 1
+>If x =/= l(1), f1 ~ 0
+>Decreasing sigma^2 decreases width of peak in f1(x) plot
+
+How do we choose landmarks?
+>Set landmarks as locations of training examples in feature space
+>Create vector f = [ f0, f1, f2, f3... ] where f0 = 1
+>f1(i) = sim(x(i),l(1))
+>fi(i) = 1
+>Smoother gaussian (larger sigma?) kernel will give higher bias, lower variance
+
+Using an SVM:
+>Use software package to solve for theta parameters
+>Choice of parameter C
+>Choice of kernel
+>Do feature normalisation before using Gaussian Kernel
+>Feature scaling required as kernel has ||x-l||^2 = (x1-l1)^2 + (x2-l2)^2 + ... + (xn-ln)^2
+>If we dont normalise e.g x1 much greater magnitude than x2 so term would dominate
+>Kernel functions need to satisfy Mercer's Theorem (so software can use optimisations)
+>Common kernels are linear or gaussian
+
+Logistic Reg vs SVMs:
+>If number of features (n) ~ number of training examples (m) use Logistic Regression or SVM without kernel (i.e linear kernel)
+>If n small, m intermediate use SVM with Gaussian Kernel
+>If n small, m v large (O(5+)) create more features then use log reg or SVM w/o kernel
+>(SVM w/o kernel similar to logistic regression)
+>Neural networks work well but slower to train
+

@@ -1,0 +1,46 @@
+Recommender Systems:
+>Have set of ratings each user gives to movies
+>Some movies may not have been rated by them yet
+>Want to fill in missing 'unrated' movies with predicted ratings for that user
+>r(i,j) is 1 if user j has rated movie i, else 0
+>y(i,j) is rating user j gives movie i
+
+(1) Content-based Recommendation:
+>Can use features e.g. x1 (romance), x2 (action)
+>Each film has a number for x1, x2, i.e. feature vector
+>Have diff parameter vector theta(j) for each user j
+>Lin Reg for each user to predict ratings for unrated films
+>min(theta(j)){ 1/2m(j) * sum(i=1:r(i,j)=1)[ { theta(j)'.X(i) - y(i,j) }^2 ]   + 1/2m(j) * sum(k=1:n){ theta(j)k ^2 }
+>where m(j) is number of films rated by user j
+>Can run this over all j, i.e. min(theta(1), ..., theta(n)){ sum(j=1:n){...} }
+>Gradient descent: d/dtheta(j)k { J(theta(1),...,theta(n)) }
+>See notes for full eqn
+
+(2) Collaborative Filtering:
+>Alternative option to content-based, is v hard to specify x1, x2 (romance, action) for a movie
+>Assume x1, x2 are unknown
+>Suppose instead that each user tells us how much they like action vs romance
+>This gives us our theta vectors
+>Can use this, along with their ratings for individual movies, to infer x1, x2 for a movie
+>Formalising this, want to minimise cost w.r.t. x(i)
+
+Content-based vs. Collaborative Filtering:
+>Given x(1),...,x(nm) can estimate theta(1),...,theta(nu)
+>Given theta(1),...,theta(nu) can estimate x(1),...,x(nm)
+>Can randomly guess theta then use to predict x
+>Guess theta -> x -> theta -> x ...
+>Converges to reasonable set of features for movies and param for users
+
+(3) Collaborative Filtering Algorithm
+>More efficient algorithm of above that does not req iteration and can solve simultaneously
+>Combined optimisation objective
+>Write J as function of x and theta
+>New J includes squared dist term and both regularisation terms
+>This process required x c (n x 1), not n+1 and theta c (n x n), i.e. x0 =/= 1
+
+>X AND THETA INITIALISE W RANDOM VARIABLES - ENSURES SYMMETRY BREAKING I.E. ALL X(I) DONT CONVERGE TO SAME VALUE
+
+
+
+
+

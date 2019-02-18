@@ -1,0 +1,5 @@
+Large training data sets:
+>"Its not who has the best algorithm that wins. Its who has the most data."
+>When using low bias Algorithms (many features, many hidden units etc.)
+>If we use a large training set we are unlikely to overfit
+>Using lots of data gives low variance

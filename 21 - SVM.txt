@@ -1,0 +1,25 @@
+Alternative view of Logistic Regression:
+>Cost of single training example = 
+>-ylog(1/1+e^-theta'.x) - (1-y)log(1-1/1+e^-theta'.x)
+>If y = 1, cost for single example = first term; log(1/1+e^-theta'.x)
+>If y = 0, cost for single example = second term; log(1-1/1+e^-theta'.x)
+>For y = 1, plot vs z (theta.x) is a downward curve tending to zero
+>For y = 0, plot is inverse
+
+>In SVM these are simplified piecewise linear
+>For y = 1, negative slope for z <= 1, then 0 for z > 1
+>For y = 0, 0 for z < -1, then positive slope for z >= -1
+
+SVM:
+>Cost = min(theta)[sum(i=1:m){ycost1(theta'.xi) + (1-y)cost0(theta'.xi)}] + lambda/2 * sum(j=1:n){thetaj^2}
+>Different method of parametrising:
+>In logistic reg, used A + lambda*B
+>In SVM, use C*A + B
+
+>If y = 1, we want theta'.x >= 1 (not just >=0 as in log reg)
+>If y = 0, we want theta'.x <= -1
+
+Margin of SVM:
+>For C large, nonregularisation term A is approx equal to 0 since we are trying to minimise
+>SVM tries to separate classes with linear line w largest margin possible
+>If C very large, more sensitive to outliners (i.e. will redraw decision boundary to include outlier)

@@ -1,0 +1,66 @@
+Debugging Learning Algorithm:
+>Get more training examples (N.B doesnt always work)
+>Try smaller sets of features
+>Try getting additional sets of features
+>Try adding polynomial features
+>Try inc/dec lambda
+>How to know which avenue to pursue?
+>Diagnosis algorithm
+
+Evaluating a Hypothesis:
+>Randomly shuffle & assign data into two portions: training set and test set (maybe 70:30)
+>Compute test set error (using J for lin/log regression)
+>Alternatively for log regression can use Misclassification Error:
+>err(h(x),y) = [1 if (h(x)>0.5 && y=0) || (h(x)<0.5 && y=1)  ;  0 otherwise]
+>Test error = 1/m_test * sum(i=1:m_test){err(h(x(i)), y(i))}
+
+Model Selection:
+>Need to choose degree of polynomial, d
+>Compute theta(d) for each degree d
+>Compute J_test(theta(d)) for each and select best d
+>Yields overly optimistic estimate of generaliation error (since we chose d to fit test set) !!!
+
+>Instead, split data into Training | Cross-Validation | Test !
+>Roughly 60:20:20
+>Test hypothesis on CV set
+>Estimate generalisation error for test set
+
+Diagnosing Bias vs Variance:
+>High bias (underfit) vs high variance (overfit)
+>How to know if bias problem or variance problem?
+>As degree d of polynomial increases, J_train decreases
+>As degree d increases, J_cv initially decreases (due to less underfit) and then increases (due to overfit/lack of generalisability)
+>If J_train & J_cv HIGH (d too low), Bias problem
+>If J_train LOW & J_cv HIGH (d too large), Variance problem
+
+Regularisation and Bias/Variance:
+>Remember too large lambda -> Underfit since h(x) ~ theta0
+>Too small lambda -> Overfit
+>Intermediate lambda -> 'Perfect' fit
+>How do we choose regularisation parameter, lambda?
+>Compute different theta for different lambda (try lambda = 0, 0.01, 0.02, 0.04, 0.08 ... 10)
+>Choose lambda with smallest J_cv
+>Test on test set
+
+>As lambda increases, J_train increases (as we begin to has bias error)
+>As lambda increases, J_cv initially decreases (due to less variance error) and then increases (due to more bias error)
+>Therefore for small lambda, J_train LOW & J_cv HIGH
+>Therefore for large lambda, J_train HIGH & J_cv HIGH
+
+
+Learning Curves:
+>Plot J_cv, J_train vs m (#training examples)
+>For small m (#training examples), easier to fit perfectly therefore error low
+>As m increases error increases
+>See slides for graphs
+
+>High variance problem indicated by large gap between J_cv and J_train, getting more data likely to help
+
+
+SUMMARY:
+>GET MORE TRAINING EXAMPLES -> FIXES HIGH VARIANCE
+>TRY SMALLER SETS OF FEATURES -> FIXES HIGH VARIANCE
+>TRY GETTING ADDITIONAL FEATURES -> FIXES HIGH BIAS
+>TRY ADDING POLYNOMIAL FEAUTRES -> FIXES HIGH BIAS
+>TRY DEC LAMBDA -> FIXES HIGH BIAS
+>TRY INC LAMBDA -> FIXES HIGH VARIANCE

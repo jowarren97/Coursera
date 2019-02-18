@@ -1,0 +1,24 @@
+Cancer Classification Example:
+>Skewed class contains a lot more examples from one class than from other
+>e.g 0.5% of patients have cancer
+>1% error would be bad as algorithm predicting no cancer all the time would achieve 0.5% error
+>Low error not a good indicator when using skewed classes
+
+Precision/Recall:
+>Precision is measure of what fraction of the patients predicted as y=1 actually have cancer
+>Precision  =  #true_pos/#predicted_pos  =  true_pos/(true_pos + false_pos)
+>Recall is measure of what fraction of patients with cancer did we detect (assign as y=1)
+>Recall  =  #true_pos/#actual_pos  =  true_pos/(true_pos + false_neg)
+>More useful evalutation metric !!!
+>Use y=1 as presence of rare class
+
+Trade-off between Precision & Recall:
+>Suppose only want to predict y=1 if v confident
+>Could set threshold higher i.e y=1 if h>0.9 else y=0
+>HIGH PRECISION, LOW RECALL
+>Suppose want to avoid missing too many cases of cancer
+>Could set threshold lower
+>HIGH RECALL, LOW PRECISION
+
+How to compare Precision & Recall:
+>F1 score = 2PR/(P + R)

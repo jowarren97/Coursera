@@ -1,0 +1,23 @@
+Unsupervised Learning:
+>Find structure in data-set WITHOUT labels
+
+Clustering:
+>Good for market segmentation, social network analysis, astronomical data analysis
+
+K-means Algorithm (most popular clustering algorithm):
+>Assign data pts to randomly initialist closest cluster centroid
+>Move cluster centroids to centres of new clusters
+>Repeat until centroids do not change position
+
+Random Initialisation:
+>Should have K < m
+>Randomly pick K training examples, set mu1,...,muk equal to these K examples
+>Can converge to different solutions (different local optima of J)
+>To counter this, repeat lots of different random initialisations
+>Pick clustering with lowest cost
+
+Choosing the Number of Clusters:
+>Elbow method: plot J vs K (no. of clusters); gives \_ shape
+>Take 'elbow' or sharp bend as no. of clusters to use
+>Doesn't always have clear elbow
+>Can also preselect K if we have downstream purpose e.g. sizing of T shirts need 3 (S, M, L)

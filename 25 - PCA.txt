@@ -1,0 +1,21 @@
+PCA:
+>Tries to minimise sum of squares of points (projection error) from new axes
+>Project data onto linear subspace (u(1), u(2), u(3), ..., u(k))
+
+Data Preprocessing:
+>Feature scaling and mean normalisation
+>uj = 1/m sum(i=1:m){xj}
+>xj = (xj - uj)/sj
+>sj may be max-min or std
+
+PCA Algorithm:
+>Calculate covariance matrix: Sigma = sum(i=1:n){x(i)*x(i)'}
+>Compute eigenvectors of matrix Sigma
+>Use single-value-decomposition (svd)
+>[U, S, V] = svd(Sigma)
+>U is matrix: [u1, u2, u3... un]
+>Take u1, u2, ..., uk
+>Z = Ureduced' * X = [u1'; u2'; ...; un'] * X
+
+
+

@@ -1,0 +1,23 @@
+Cost Function:
+>n dim feature vector
+>m training examples
+>Cant use linear regr cost function { 0.5*(h(x)-y)^2 }
+>Doesn't have convex cost function -> might not reach global min
+>Cost(h(x),y) = [ -log(h(x)) if y=1  ;  -log(1-h(x)) if y=0 ]
+>Intuition: consider y = 1; if h(x) = 1, cost = 0
+>Intuition: consider y = 1; if h(x) -> 0, cost -> +inf
+>Intuition: consider y = 0; if h(x) = 0, cost = 0
+>Intuition: consider y = 1; if h(x) -> 1, cost -> +inf
+
+Simplified Cost Function & Gradient Descent
+>Overall: J(theta) = 1/m * sum(i=1:m)[Cost(h(x),y)]
+>Cost(h(x),y) = -ylog(h(x)) - (1-y)log(1-h(x))
+>J(theta) = -1/m * sum(i=1:m)[ y(i).log(h(xi)) + (1-y(i))log(1-h(xi)) ]
+>Want to find min(J(theta), theta)
+>thetaj := thetaj - a*d/dthetaj {J(theta)}
+>thetaj := thetaj - a * sum(i=1:m) { [h(xi) - y(i)]x(i)j }
+>looks identical to linear regression; remember however that h(x) = 1/(1 + e^-theta'.x) vs h(x) = theta'.x
+
+Vectorised:
+>J(theta) = 1/m * (-y'.log(h) - (1-y)'.log(1-h))
+>theta := theta - a/m * X'.(g(X.theta) - y)

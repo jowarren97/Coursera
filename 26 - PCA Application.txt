@@ -1,0 +1,16 @@
+Reconstruction from Compressed Representation:
+>How to go back up to higher dimension?
+>xapprox = Ureduced * z
+>Effectively plots along eigenvectors but in higher dimensional axes
+>i.e if we reduced 2D to 1D, reconstruction will plot pts along a line (eigenvector) in 2D
+
+Choosing # of Principle Components (k):
+>Average sq projection error: 1/m * sum(i=1:m){ ||x(i) - xapprox(i)||^2 }
+>Total variation in the data: 1/m * sum(i=1:m){ ||x(i)||^2 }
+>Choose k s.t. (average sq projection error/total variation) < 0.01 (*)
+>Implies 99% of variance is retained
+>Repeat procedure from k = 1 upwards until condition is satisfied
+>I.e. choose smallest value of k that gives 99% variance retained
+
+>(*) can be computed much more easily via:  1 - (sum(i=1:k){S_ii} / sum(i=1:n){S_ii}) < 0.01
+>Where S_ii is iith element of S matrix (diagonal eigenvalue matrix)

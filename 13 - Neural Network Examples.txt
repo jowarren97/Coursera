@@ -1,0 +1,34 @@
+AND gate:
+>1 layer
+>x = [1, x1, x2]
+>x1,x2 = {0 OR 1}
+>let theta = [-30, 20, 20]
+>h(x) = g(-30 + 20x1 + 20x2)
+>consider:
+>x = [1, 0,0], h = g(-30) ~ 0
+>x = [1, 1,0], h = g(-10) ~ 0
+>x = [1, 0,1], h = g(-10) ~ 0
+>x = [1, 1, 1], h = g(10) ~ 1
+
+NOT gate:
+>x = [1, x1]
+>theta = [10, -20]
+>x = [1, 0], h = g(10) ~ 1
+>x = [1, 1], h = g(-10) ~ 0
+
+NOTx1 AND NOTx2:
+>theta = [10, -20, -20]
+
+XNOR:
+>2 units in layer 1
+>1 unit in output layer
+>Unit 1: AND ... [-30, 20, 20]
+>Unit 2: NOT AND NOT ... [10, -20, -20]
+>Output unit: OR ... [10, 20, 20]
+
+>[x0, x1, x2] -> [a(2)_1, a(2)_2] -> [a(3)] -> h(x)
+
+
+Multiclass Classification:
+>Output h as a vector i.e h(x) = [1 0 0 0] if car, [0 1 0 0] if pedestrian etc.
+>Need e.g 4 units on output layer

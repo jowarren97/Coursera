@@ -1,0 +1,6 @@
+Neural Networks and Overfitting:
+>Small neural network -> few parameters -> prone to underfitting
+>Large nerual network -> more parameters -> prone to overfitting
+>Large = more layers or more units
+>More units -> computationally more expensive
+>Can use regularisation to address overfitting

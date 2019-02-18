@@ -1,0 +1,12 @@
+Building a Spam Classifier:
+>Need to distinguish between spam (1) and not-spam (0)
+>Choose 100 words e.g. deal, buy, discont, andrew...
+>x is feature vector, contains 1s and 0s if email contains/doesnt contain words as above
+>i.e xj = [ 1 if word j appears, 0 if word j doesnt appear ]
+>In practice take most frequently occurring n words (10,000 - 50,000)
+
+Error Analysis:
+>Process: 1) Simple algorithm quick to implement, 2) learning curve, 3) Error analysis
+>Error Analysis is manually examining examples algorithm made errors on
+>Categorise the errors i.e what type of errors and what feature would have helped classify correctly
+>e.g. bad at detecting steal password spam or bad at detecting deliberate misspellings

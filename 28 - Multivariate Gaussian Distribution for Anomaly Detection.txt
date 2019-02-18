@@ -1,0 +1,18 @@
+Multivariate Gaussian Distribution:
+>Previous method considers only distance from average, for each features
+>This results in ~circular contours for p(x) as we move away from cluster
+>But suppose we have a linear relationship between x1 and x2
+>A pt could clearly deviate from line but still be within acceptable region for x1 & x2
+
+>We model p(x) all in one go
+>Take mu (n x 1), sigma (n x n) <- covariance
+>Use eqn for Multivariate Gaussian Distr.
+>Varying elements of sigma changes form/direction of gaussian distr.
+
+>MUTLIVARIATE GAUSSIAN DISTR IS MORE GENERAL CASE OF PREV EXAMPLE
+>Previous example is where sigma is diagonal matrix of variances
+>[sigma1^2, 0, ..., 0; 0, sigma2^2, 0, ..., 0; 0, 0, sigma3^2, ... 0; ...]
+>Computing sigma computationally expensive
+>For multivariate gaussian must have m (#examples) > n (#features) (m >> 10n is good) or else sigma is non-invertible
+>Redundant features (e.g. x3 = x1 + x2) i.e. linearly dependent will make sigma non-invertible
+

@@ -1,0 +1,16 @@
+Univariate Linear Regression:
+>training set -> learning alg -> hypothesis
+>hypothesis maps input x to output y
+>h:X->Y
+>hypothesis h(x) = a + bx
+>a, b are parameters
+
+Cost Function:
+>want to minimise (h(x)-y)^2 
+>i.e squared diff between hypothesis and actual result
+>for entire data set! Therefore sum over all data points (m)
+>squared error cost function J
+>J(theta0, theta1, ..., thetan) = 1/2m * sum(i=1:m){[h(x(i))-y(i)]^2}
+>want to minimise J wrt a,b
+>J is a quadratic surface
+>can use contour plot to visualise

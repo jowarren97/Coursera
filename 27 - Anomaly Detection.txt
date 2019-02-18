@@ -1,0 +1,52 @@
+Anomaly Detection:
+>Take input features, want to know if point is anomalous
+>i.e. take in training dataset {x1, x2, x3... xm}, want to know if xtest is anomalous
+>p(xtest) < e -> flag anomaly
+>Most common application is fraud detection, features may be x1=login freq, x2=typing speed, x3=#webpages visited
+
+Algorithm:
+1. Choose features that may be indicative of anomalous examples
+2. Fit parameters mu1, ..., mun, sigma1, ..., sigman
+3. Given new example xtest, compute p(xtest)
+
+>muj = 1/m * sum(i=1:m){ xj(i) }
+>vectorised: mu = 1/m sum(i=1:m){ x(i) }
+>sigmaj^2 = 1/m * sum(i=1:m){ (xj(i) - muj )^2 }
+
+>p(x) = p(x1,mu1,sigma1^2) * p(x2,mu2,sigma2^2) * ... * p(xn,mun,sigman^2)
+>Assume x1, ...xn distrubted normally
+>p(x) = pi(i=1:n){ p(xi, mui, sigmai^2) }
+>p(x) = pi(i=1:n){ normal distribution }
+>Anomaly is p(x) < e
+
+The importance of real-number evaluation:
+>Good to have a numerical way of evaluating algorithm
+>Anomaly detection is unsupervised learning, but assume we have some labeled anomalous/nonanomalous data
+>A few anomalous examples included in cv and test sets
+>N.B we have much larger amount of non-anomalous data compared to anomalous
+>Split up anomalous data into cv and test set (50:50)
+
+Evaluating Algorithm:
+>Fit model p(x) on training set
+>On cv set predict y = 1 (anomalous) if p(x)<e   or y = 0 (non-anomalous) if p(x)>e
+>DONT USE CLASSIFICATION ACCURACY (see prev lecture; always predicting y=0 would give low classification error)
+>Better metrics: true positive, false positive,  false neg, true neg, precision/recall, F1 score
+>Can use cv set to choose parameter e that e.g. maximised F1 score
+
+Anomaly Detection vs. Supervised Learning:
+Anomaly Detection:
+>If we have very small # examples
+>Large # negative examples
+>Many diff types of anomaly i.e. new examples dont reflect previous examples of anomaly
+Supervised Learning:
+>Large # positive and negative examples
+>Alg gets a sense of what positive example looks like, future examples likely to be similar to prev
+
+How to select features:
+>Try to select features that are roughly gaussian
+>If features not gaussian can try transformations (e.g log, ^0.5) to reshape to gaussian curve
+
+Error Analysis for Anomaly Detection:
+>Common problem is p(x) is similar for normal and anomaly i.e anomalous pt is among lots of normal ones
+>Try to get more features that reveal better whether pt is anomalous
+>i.e Choose features that might take on unusually large or small values in the event of an anomaly

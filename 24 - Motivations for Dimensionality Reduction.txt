@@ -1,0 +1,7 @@
+Data Compression:
+>Reduce dimensions by projecting onto new axes
+>Allows algorithms to run more quickly
+
+Data Visualisation:
+>Can reduce dimensions to clarify variation between data pts
+>e.g Countries classified by 50 features, reduce to 2 or 3 which roughly correspond to country size and GDP per person

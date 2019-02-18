@@ -1,0 +1,15 @@
+'Batch' Gradient Descent:
+>algorithm to minimise J(theta0, theta1, theta2, ..., thetan)
+>take 'step' away from init pt in steepest direction
+>can get stuck at local minima
+>thetaj := thetaj - a*(d/dthetaj){J(theta0, theta1, ..., thetan)
+>a = learning rate, how big the step is i.e how aggressive descent is
+>update all thetaj, j = 0,1,...,n simultaneously BEFORE SUBST. NEW VAL INTO COST FUNCTION
+>if a too small, take too many steps
+>if a too large, can overshoot minimum
+>as we approach local min, alg takes smaller steps as gradient is smaller, therefore converges
+
+Gradient Descent with Linear Regression Model:
+>theta1 = a * 1/m * sum(i=1:m){h(x(i))-y(i)}
+>theta2 = a * 1/m * sum(i=1:m){[h(x(i))-y(i)]*x(i)}
+>Cost fctn for lin reg is always 'bowl' shaped i.e convex so one minimum

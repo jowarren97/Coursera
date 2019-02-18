@@ -1,0 +1,10 @@
+Training a Network:
+>Rand initialise weights
+
+>Loop for each training example:
+>Fwd prop -> h(x)
+>Compute cost function
+>Back prop -> partial derivatives
+
+>Use grad checking -> verify back prop 
+>Use gradient descent to minimise J(theta)

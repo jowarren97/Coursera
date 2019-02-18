@@ -1,0 +1,26 @@
+Overfitting:
+>Underfitting - high bias i.e preconception of type of fit e.g linear
+>Overfitting - high variance i.e curve passes through all data but varies too much
+>i.e hypothesis fits training set perfectly but cannot generalise
+
+>Options:
+1. Reduce number of features (via manual selection or model selection alg)
+2. Regularisation (keep all features but reduce mag of theta)
+
+>Suppose we penalise higher order polynomial terms in cost function
+>min(1/2m * sum ... + 1000theta3^2 + 1000theta4^2)
+>Forces a simpler hypothesis which is less prone to overfitting
+
+Regularisation (Linear):
+>J(theta) = 1/2m * [ sum(i=1:m){ [h(x(i)) - y(i)]^2 } + lambda*sum(j=1:n){ thetai^2 } ]
+>lambda is regularisation parameter
+>In gradient descent:
+>thetaj = thetaj(1 - a*lambda/m) - a* 1/m * sum ...
+>Normal Eqn:
+>Theta = Inv(X'.X + lambda[ 0 0 0 0 ...; 0 1 0 0 ...; 0 0 1 0 ...]).X'.y
+
+Regularisation (Logistic):
+>
+
+
+

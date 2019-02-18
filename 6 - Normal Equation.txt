@@ -1,0 +1,27 @@
+The Normal Equation:
+>want to minimise cost function J
+>partial diff and set equal to 0
+>make matrices X and Y
+>X = [x(1)0, x(1)1, x(1)2 ...; x(2)0, x(2)1, x(2)2 ...; ...]
+>y = [y(1); y(2); ...]
+>X m*(n+1) dim
+>y m dim
+
+>theta = (inv(X'.X)).X'.y
+
+Gradient Descent vs Normal Eqn:
+>G.D need to choose a
+>G.D need many iterations
+>G.D good if n is large
+>O(k*n^2)
+
+>N.E dont need to choose a
+>N.E dont need to iterate
+>N.E need to compute inv(X'.X), slow if n is very large (e.g n>10000)
+>O(n^3)
+
+If X'.X noninvertible?
+>Have reduntant features e.g x1 = length in feet, x2 = length in metres
+>Too many features e.g m < n; more parameters than training examples
+>For above delete features or use regularisation
+
